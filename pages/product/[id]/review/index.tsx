@@ -13,7 +13,7 @@ interface Review {
     reviews: Review[];
   }
 
-export const getServerSideProps:GetServerSideProps=async(context:any)=>{
+export const getServerSideProps: GetServerSideProps<ReviewPageProps> = async (context) => {
     const {id} = context.params as {id:string};
  
     const result = await fetch(`https://dummyjson.com/products/${id}`);
